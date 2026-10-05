@@ -1,0 +1,44 @@
+{
+  "servers": {
+    "openbb": {
+      "module": "app.mcp_children.openbb_server",
+      "class": "OpenBBServer",
+      "enabled": true,
+      "port": 5001,
+      "tools": [
+        "get_stock_price",
+        "get_income_statement",
+        "get_balance_sheet",
+        "get_cashflow_statement",
+        "search_ticker"
+      ],
+      "timeout": 30
+    },
+    "sales": {
+      "module": "app.mcp_children.sales_server",
+      "class": "SalesServer",
+      "enabled": true,
+      "port": 5002,
+      "tools": [
+        "qualify_lead",
+        "schedule_demo",
+        "create_opportunity",
+        "get_pipeline_status"
+      ],
+      "timeout": 30
+    },
+    "support": {
+      "module": "app.mcp_children.support_server",
+      "class": "SupportServer",
+      "enabled": true,
+      "port": 5003,
+      "tools": [
+        "lookup_knowledge",
+        "search_faqs",
+        "escalate_to_human",
+        "log_ticket"
+      ],
+      "timeout": 30
+    }
+  }
+}
